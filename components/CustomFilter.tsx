@@ -6,4 +6,4 @@ const CustomFilter = () => {
   )
 }
 
-export default CustomFilter
+export default CustomFilter;
