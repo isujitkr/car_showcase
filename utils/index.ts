@@ -1,4 +1,4 @@
-require("dotenv").config();
+//require(".env").config();
 export async function fetchCars() {
   const headers = {
     "X-RapidAPI-Key": process.env.RAPIDAPI_KEY,

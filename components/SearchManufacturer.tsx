@@ -1,22 +1,26 @@
 "use client";
 
-import Image from 'next/image';
-import { useState, Fragment } from 'react';
-import { SearchManufacturerProps } from '@/types';
-import { Combobox, Transition } from '@headlessui/react';
-import { manufacturers } from '@/constants';
+import Image from "next/image";
+import { useState, Fragment } from "react";
+import { SearchManufacturerProps } from "@/types";
+import { Combobox, Transition } from "@headlessui/react";
+import { manufacturers } from "@/constants";
 
-const SearchManufacturer = ({ manufacturer, setManufacturer }: SearchManufacturerProps) => {
-  const [query, setQuery] = useState(''); // Change the placeholder to an empty string
+const SearchManufacturer = ({
+  manufacturer,
+  setManufacturer,
+}: SearchManufacturerProps) => {
+  const [query, setQuery] = useState(""); // Change the placeholder to an empty string
 
-  const filteredManufacturers = query === ""
-    ? manufacturers
-    : manufacturers.filter((item) =>
-      item
-        .toLowerCase()
-        .replace(/\s+/g, "")
-        .includes(query.toLowerCase().replace(/\s+/g, ""))
-    );
+  const filteredManufacturers =
+    query === ""
+      ? manufacturers
+      : manufacturers.filter((item) =>
+          item
+            .toLowerCase()
+            .replace(/\s+/g, "")
+            .includes(query.toLowerCase().replace(/\s+/g, ""))
+        );
 
   return (
     <div className="search-manufacturer">
